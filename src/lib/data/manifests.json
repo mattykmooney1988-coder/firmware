@@ -23,6 +23,12 @@
 		{ "id": "lilygo-t-watch-s3", "name": "Lilygo T-Watch S3", "family": "ESP32-S3" }, { "id": "lilygo-t-hmi", "name": "Lilygo T-HMI", "family": "ESP32-S3" },
 		{ "id": "lilygo-t-lora-pager", "name": "Lilygo T-LoRa Pager", "family": "ESP32-S3" }
 	],
+	"Elecrow": [
+		{ "id": "elecrow-35Bv2_2", "name": "elecrow-35Bv2_2", "family": "ESP32" },
+		{ "id": "elecrow-35B", "name": "elecrow-35B", "family": "ESP32" },
+		{ "id": "elecrow-28B", "name": "elecrow-28B", "family": "ESP32" },
+		{ "id": "elecrow-24B", "name": "elecrow-24B", "family": "ESP32" }
+	],
 	"CYD": [
 		{ "id": "CYD-2432S028", "name": "CYD-2432S028", "family": "ESP32" },
 		{ "id": "CYD-2432W328C", "name": "CYD-2432W328C", "family": "ESP32" },
