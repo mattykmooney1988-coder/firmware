@@ -70,7 +70,7 @@
   #define FG 3
 #endif
 #ifndef ROTATION
-  #define ROTATION 1
+  #define ROTATION 0
 #endif
 #ifndef	TFT_WIDTH
   #define TFT_WIDTH 240
