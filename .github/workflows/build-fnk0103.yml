@@ -1,0 +1,50 @@
+name: Build FNK0103 firmware bins
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - add-fnk0103-st7789r-envs
+    paths:
+      - "boards/CYD-2432S028/CYD-2432S028.ini"
+      - "platformio.ini"
+      - "src/**"
+      - "lib/**"
+      - ".github/workflows/build-fnk0103.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - FNK0103-ST7789R-32-A
+          - FNK0103-ST7789R-32-B
+          - FNK0103-ST7789R-32-C
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PlatformIO
+        run: pip install platformio
+
+      - name: Build ${{ matrix.env }}
+        run: pio run -e ${{ matrix.env }}
+
+      - name: Upload firmware artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.env }}-firmware
+          path: |
+            .pio/build/${{ matrix.env }}/firmware.bin
+            .pio/build/${{ matrix.env }}/bootloader.bin
+            .pio/build/${{ matrix.env }}/partitions.bin
+            .pio/build/${{ matrix.env }}/firmware.elf
+          if-no-files-found: warn
