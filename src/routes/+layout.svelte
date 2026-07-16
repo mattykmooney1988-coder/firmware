@@ -41,7 +41,7 @@
 <header class="fixed top-0 left-0 z-[100] w-full bg-[#111] py-3.5">
 	<div class="mx-auto w-11/12 max-w-full">
 		<nav class="flex items-center justify-between">
-			<a href="/" class="flex items-center">
+			<a href="{base}/" class="flex items-center">
 				<img src="{base}/img/bruce.png" alt="Bruce Logo" class="h-[50px]" />
 			</a>
 			<button
@@ -51,7 +51,7 @@
 				aria-label="Open navigation">☰</button
 			>
 			<div class="hidden items-center gap-5 lg:flex">
-				<NavLink href="/" selected={$current_page == Page.Home}>Home</NavLink>
+				<NavLink href="{base}/" selected={$current_page == Page.Home}>Home</NavLink>
 				<NavLink href="https://github.com/pr3y/Bruce" target="_blank">GitHub</NavLink>
 				<NavLink href="{base}/flasher" variant="install">Install</NavLink>
 				<NavLink href="https://wiki.bruce.computer" target="_blank">Docs</NavLink>
